@@ -1,3 +1,7 @@
+# CCS files
+*.launch
+*.pp
+
 # Object files
 *.o
 *.ko
@@ -34,8 +38,7 @@
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
-
+Icon
 # Thumbnails
 ._*
 
