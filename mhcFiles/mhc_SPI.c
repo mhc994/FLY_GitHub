@@ -32,12 +32,14 @@ __interrupt void spiaRxIsr(void)//不使用FIFO时接收数据，发送完成，接收溢出共用此
 
 	SpiaRegs.SPIFFRX.bit.RXFFINTCLR=1;  // Clear Interrupt flag
     PieCtrlRegs.PIEACK.all|=0x20;       // Issue PIE ack
-    spiAReadData[spiPointer] = SpiaRegs.SPIRXBUF /*&0x00FF*/;     // Read data
+    spiAReadData[spiPointer] = SpiaRegs.SPIRXBUF & 0x00FF;     // Read data
 
   	GpioDataRegs.GPBDAT.bit.GPIO34 = 0;
   	SpiaRegs.SPITXBUF = spiASendData[spiPointer]<<8;     // Send data
 
-    if(spiPointer++>18)  	spiPointer=0;
+  	spiPointer++;
+    if(spiPointer==56)  	spiPointer=0;
+    if(spiPointer==28)  	spiPointer=0;
 }
 
 /***********************************************************************

@@ -14,15 +14,15 @@ void init_I2C_devices()
 void init_I2C_devices_flying()//重新初始化I2C 飞行时I2C出错则调用 初始化不成功则调用iiC_broken
 {
 	   // 暂时没改,要改
-    while( iicWriteByte(MPU6050ADDR,PWR_MGMT_1	, 0x01) != I2C_SUCCESS);
+    while( iicWriteByte(MPU6050ADDR,PWR_MGMT_1	, 0x01) != I2C_SUCCESS); //解除休眠状态，选择GYRO_PLL_x作为时钟
     while(i2c_Send_Complete==0);
-    while( iicWriteByte(MPU6050ADDR,SMPLRT_DIV	, 0x00) != I2C_SUCCESS);
+    while( iicWriteByte(MPU6050ADDR,SMPLRT_DIV	, 0x00) != I2C_SUCCESS); //配置采样率0x07
     while(i2c_Send_Complete==0);
-    while( iicWriteByte(MPU6050ADDR,CONFIG 			, 0x00) != I2C_SUCCESS);
+    while( iicWriteByte(MPU6050ADDR,CONFIG 			, 0x00) != I2C_SUCCESS);//配置数字滤波0x06
     while(i2c_Send_Complete==0);
-    while( iicWriteByte(MPU6050ADDR,GYRO_CONFIG, 0x18) != I2C_SUCCESS);
+    while( iicWriteByte(MPU6050ADDR,GYRO_CONFIG, 0x18) != I2C_SUCCESS);//2000°/s
     while(i2c_Send_Complete==0);
-    while( iicWriteByte(MPU6050ADDR,ACCEL_CONFIG, 0x01) != I2C_SUCCESS);
+    while( iicWriteByte(MPU6050ADDR,ACCEL_CONFIG, 0x01) != I2C_SUCCESS);//±2g
     while(i2c_Send_Complete==0);
 }
 

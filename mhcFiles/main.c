@@ -7,7 +7,8 @@ void main(void)
 	initDSP();
 //	init_I2C_devices();
 	GpioDataRegs.GPBDAT.bit.GPIO34 = 0;
-	SpiaRegs.SPITXBUF=spiASendData[0];
+	spiPointer=28;
+	SpiaRegs.SPITXBUF=spiASendData[spiPointer];
 
 //	while( iicStartRead() != I2C_SUCCESS );
 

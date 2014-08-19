@@ -181,7 +181,7 @@ void initGlobalVariables()
 
 
 
-	i2cStatus=0;
+//	i2cStatus=0;
 	// 0 什么都不做
 	// 12 I2C正在发送地址，之后要接收一个数据
 	// 13 I2C发完了Reg地址，正在接收一个数据

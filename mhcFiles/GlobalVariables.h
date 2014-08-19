@@ -20,21 +20,25 @@ extern Uint16 channelsData2048[16];
 extern float32 channelsData1000[16];
 extern Uint8 channelsData4[16];
 
-extern Uint16 i2cDataPointer;
-extern int16 i2cData[32];
-extern Uint16 i2cSlaves[32];
-extern Uint16 i2cRegAddr[32];
-extern float32 MPU6050Data[7];
-extern Uint16 i2cStatus;
 
-extern Uint16 i2c_Send_Data;
-extern Uint16 i2c_Slave_Addr;
-extern Uint16 i2c_Reg_Addr;
-extern Uint16 i2c_Send_Complete;
+
+//extern Uint16 i2cDataPointer;
+//extern int16 i2cData[32];
+//extern Uint16 i2cSlaves[32];
+//extern Uint16 i2cRegAddr[32];
+//extern float32 MPU6050Data[7];
+//extern Uint16 i2cStatus;
+//
+//extern Uint16 i2c_Send_Data;
+//extern Uint16 i2c_Slave_Addr;
+//extern Uint16 i2c_Reg_Addr;
+//extern Uint16 i2c_Send_Complete;
+
 
 
 extern Uint8 doCalulate , doSCI , doSBusDecode ;
 extern Uint8 fly_enable; //3¿ÉÒÔÆð·É
+
 
 extern Uint16 acceXDrift ;
 extern Uint16 acceYDrift ;
@@ -100,8 +104,8 @@ extern float32 height_ultrasonic_lp;
 extern float32 MOTOR1_PULSE,MOTOR2_PULSE,MOTOR3_PULSE,MOTOR4_PULSE,pulse_temp;
 
 extern Uint16 spiPointer;
-extern Uint16 spiASendData[20];
-extern Uint16 spiAReadData[20];
-extern Uint16 spiAStop[20];
+extern Uint16 spiASendData[56];
+extern Uint16 spiAReadData[56];
+extern Uint16 spiAStop[56];
 
 #endif
